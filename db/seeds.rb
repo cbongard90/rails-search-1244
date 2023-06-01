@@ -5,6 +5,13 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+# Erase the previous data
+puts 'delete previous data'
+Movie.destroy_all
+Director.destroy_all
+TvShow.destroy_all
+
 url = "https://gist.githubusercontent.com/ssaunier/be9a933b64116e2422176aab7528473e/raw/d1e1b06e25616771fddf44bf066765f518b0655d/imdb.yml"
 sample = YAML.load(URI.parse(url).read)
 
